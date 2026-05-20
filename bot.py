@@ -378,10 +378,15 @@ async def btn(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif q.data == "check":
         await q.edit_message_caption(
-            caption=("🔍  Проверка прав\n" + DIV + "\n"
-                "Проверьте подлинность водительского\nудостоверения на сайте ГИБДД.\n" + DIV),
+            caption=("🔍  Проверка водительских прав\n" + DIV + "\n"
+                "Проверьте подлинность удостоверения\nна официальных сайтах:\n\n"
+                "> гос-автоинспекция.net\n"
+                "> gibdd.news\n"
+                "> госавтоинспекция.org\n" + DIV),
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("🌐  Перейти на сайт ГИБДД", url=GIBDD_URL)],
+                [InlineKeyboardButton("🌐 гос-автоинспекция.net", url="https://xn----8sbgbnrbpzfdotgl5e9h.net/")],
+                [InlineKeyboardButton("🌐 gibdd.news", url="https://gibdd.news/")],
+                [InlineKeyboardButton("🌐 госавтоинспекция.org", url="https://xn--80aebkobnwfcnsfk1e0h.org/")],
                 [InlineKeyboardButton("◀️  Назад", callback_data="back")]]))
 
     elif q.data == "ref":
